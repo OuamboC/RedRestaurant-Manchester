@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" width="width=device-width,    initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/mystyle.css">
+        <title>Red Restaurant</title>
+        <script src="Javascript/BOOKING.js" ></script>
+        
+    </head>
+
+    <body id="myBooking">
+       
+        <div class="Booking-page">
+            <div class="Reminder-OpenHours">
+                <h2 class="heading">红餐厅-OPEN HOURS !!!</h2>
+                <h3 class="heading-days">Monday</h3>
+                <p>CLOSED</p>
+
+                <h3 class="heading-days">Tuesday-Saturday</h3>
+                <p>12:00 noon- 21:30H</p>
+
+                <hr>
+                
+                <h4 class="heading-Address">
+                    <p>
+                        <strong>Address:</strong>
+                        <br> Basement, 103 Portland St
+                        <br> Manchester M1 6DF
+                    </p>
+                </h4>
+                <hr>
+
+                <h4 class="heading-phone">
+                    <p>
+                        <br> <strong>Phone:</strong>
+                        <br> <a href="tel:+4401612117545">+44 0161 211 7545</a> <!--Click to call via Html Code-->
+                    </p>
+                
+                </h4>
+                <hr>
+
+                <h4 class="heading-email">
+                    <p>
+                        <br><strong>Email:</strong>
+                        <br> <a href="mailto:redrestaurant@gmail.com">redrestaurant@gmail.com</a>
+                    </p>
+                </h4>
+            </div>
+
+
+
+
+            <div class="Booking-Container"> <!--Full-Cointainer-->
+                
+                <form action="/api/bookings" method="post" onsubmit="return  validateForm();">
+                    <h2 class="heading-Booking-Container">Reservation Online</h2>
+                    <div class="form-field">
+                        <label for="Name">Name:</label>
+                        <input type="text" id="Name" name="Name" placeholder="Please enter your Full Name" autocomplete="on" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="Email">Email:</label>
+                        <input type="email" id="Email" name="Email" placeholder="Please enter your email" autocomplete="on" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="Date">Date:</label>
+                        <input type="date" id="Date" name="Date" autocomplete="on" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="Time">Time:</label>
+                        <select id="Time-of-bookings" name="Time-of-bookings" required>
+                            <option value="">Select Time</option>
+                            <option value="12:00">12:00pm</option>
+                            <option value="12:30">12:30pm</option>
+                            <option value="13:00">13:00H</option>
+                            <option value="13:30">13:30H</option>
+                            <option value="14:00">14:00H</option>
+                            <option value="14:30">14:30H</option>
+                            <option value="15:00">15:00H</option>
+                            <option value="15:30">15:30H</option>
+                            <option value="16:00">16:00H</option>
+                            <option value="16:30">16:30H</option>
+                            <option value="17:00">17:00H</option>
+                            <option value="17:30">17:30H</option>
+                            <option value="18:00">18:00H</option>
+                            <option value="18:30">18:30H</option>
+                            <option value="19:00">19:00H</option>
+                            <option value="19:30">19:30H</option>
+                            <option value="20:00">20:00H</option>
+                            <option value="20:30">20:30H</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="Number-of-customers">Party Size:</label>
+                        <select id="Number-of-customers" name="Number-of-customers" required>
+                            <option value="">Select Party Size</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">7</option>
+                        </select>
+                    </div>
+
+                    <button class="button-style">SUBMIT</button>
+            
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

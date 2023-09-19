@@ -1,0 +1,940 @@
+ /*****************GENERAL EXPLANATION OF SOME PROPERTY *****************************/
+ 
+ /*  display:inline; This property place all the items horizontally on the x-axis */
+/* display:flex ; To remove the nav-bar  down the logo in the y-axis and place it along the logo over the available space along the y-axis */
+/*display: inline-block ; this property allows to set a width and height on the element , the top and bottom margins/ paddings are respected*/
+/* display: inline; the top and bottom margins/ paddings are not respected */
+/*display: block , this property doesn't add a line brefk between the elements */
+   
+
+
+/******************************HEADER/ LOGO / NAVBAR*****************************/
+main {
+        
+        height:auto;   
+}
+
+
+*,
+*:before,
+*:after {
+        box-sizing: inherit;
+        padding: 0;
+        margin: 0;
+}
+header{
+        background-color: #e23535;
+        display:flex;   /* To remove the nav-bar  down the logo in the y-axis and place it along the logo over the available space along the y-axis */
+        
+        
+}
+/*Style the main-bar*/
+.main-bar{
+        list-style-type: none;    
+        margin:10px;
+        padding:10px;
+        
+}
+.main-bar li{
+        display: inline-block;
+        padding:20px 20px ; /* top&bottom, right&left */
+        font-size: 0.9em;
+        font-weight: 900;
+    }
+.main-bar a{
+        text-decoration: none;
+    }
+
+/*The visited  selector style a link when the list has beem visited */
+.main-bar a:visited {
+        color:rgb(255, 255, 255);
+
+}
+
+/*The items in the main bar is hovered when the user show the mouse*/
+.main-bar a:hover {
+        background-color: rgba(250, 250, 250, 0.5);
+
+}
+.image1 {
+       max-width:100%; 
+        height :100px;
+        margin:0 50% 0 100px;
+}
+
+
+/*********PRESENTATION & THEIR SERVICES INSIDE THE BOOKING BUTTON**********/
+
+
+.Welcome h1{
+        font-weight:900;
+        color: rgb(255, 255, 255);
+        margin-bottom: 20px;
+        font-size:3em;
+}
+.Welcome p {
+        margin-top:20px;
+        margin-bottom: 20px;
+        font-weight:800;
+        font-size: 2em;
+        color: rgba(255, 255, 255, 90%);
+}
+.btn {
+       
+        margin-top:60px;
+        border: 1px solid black;
+        padding:10px;
+        text-decoration: none;
+        color:rgb(0, 0, 0);
+        background: rgb(255, 255, 255);
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:900;
+        margin-bottom: 0;
+}
+.Welcome {
+        background-image: url(../images/van-thanh-dTlYGkWaZXo-unsplash.jpg);
+        background-size: cover;
+       /* background-position:  right; */
+        text-align:center;
+        padding:250px 0;
+        width: 100%;
+
+        position: relative;
+}
+
+
+/*********************************ABOUT THE RESTAURANT************************************/
+
+.About {
+        background-color: #e23535;
+        padding:100px 0 50px 0;
+        border:4px solid #e23535;
+        display:grid;
+    grid-template-columns: 0.5fr 0.2fr;
+    grid-template-rows: auto;
+    column-gap: auto;
+    row-gap: auto;
+    max-width:100%;
+
+    
+} 
+.About h3  {
+    float:left;
+    font-weight: 900;
+    margin-bottom:5px;
+   
+}
+.About p {
+    float: right;
+    margin-top: 5px;
+}
+.About-summary {
+     /* border: 4px solid red; */
+    background-color: white;
+    padding: 100px 50px;
+    
+    
+}
+.About-image {
+   margin-top: 50px;
+   margin-left:-50px;
+   max-width: 100%;
+   height:auto;
+   min-width:200px;
+
+        
+}
+
+.image2 {
+        max-width: 100%;
+        height: auto;    
+}
+
+/********************************GALLERY***********************************************/
+/*Slideshow Container */
+.Gallery{
+        background-color:white;
+        
+        
+}
+.Gallery h2 {
+        text-align: center;
+        font-size: 55px;
+        text-decoration: underline;
+           
+}
+
+.Gallery-slideshow-container{
+        max-width:1000px;
+        position:relative;
+        margin:auto;
+       /* padding:200px; */
+}
+/*Hide the images by default */
+.mySlides {
+        display:none;
+}
+/*Next& previous buttons */
+.prev, .next {
+        cursor:pointer;
+        position: absolute;
+        top:50%;
+        width:auto;
+        margin-top: -22px;
+        padding:16px;
+        color:blue;
+        font-weight: 900;  /*900=bold */
+        font-size: 18px;
+        transition:0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select:none;
+}
+/*Position the "next button" to the right */
+.next{
+        right:0;
+        border-radius:3px 0 0 3px;
+}
+/* On hover , add a black blackground color with a little bit see-through */
+.prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8); /*80% opacity,opacity make an object transparent */
+}
+/*Caption text*/
+.text{
+        color:white;
+        font-size:12px;
+        padding:8px 12px; /*top & bottom ; right & left*/
+        position: absolute;
+        bottom:8px;
+        width:100%;
+        text-align:center;
+}
+/*The dots/bullets/indicators */
+.dot{
+        cursor:pointer;
+        height:15px;
+        width:15px;
+        margin:0 2px; /*top & bottom , right & left */
+        background-color:#bbb;
+        border-radius:50%;
+        display:inline-block;
+        transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+        background-color: #717171;
+}
+/*Fading information */
+.fade{
+        animation-name: fade;
+        animation-duration: 1.5s;
+}
+
+@keyframes fade {
+        from{opacity: 0.4;} /*partially transparent,with some visibility */
+        to {opacity:1} /*fully opaque */
+        
+}
+/* Set the width and the height of the images in the Slideshow Container */
+.image3, .image4, .image5, .image6, .image7{
+        width:100%;
+        height:300px;  
+}
+/* Align the dot-circles in the center */
+.dots-circles{
+        text-align: center;
+}
+
+
+/**********************************CONTACT INFO**************************************/
+.Contact a:link {
+        text-decoration: none;
+        color: black;
+        font-weight:900;
+        background-color: #605856;
+}
+
+
+.Contact h2 {
+        padding: 50px;
+        text-decoration: underline;  
+        
+}
+
+.Contact {
+        background-image: url(../images/lewis-roberts-ET77Hvpz3fI-unsplash.jpg);
+        background-size: cover ;
+        background-position: top left;
+        margin-left:-1px ;
+        display:grid;
+        grid-template-columns:repeat(2,2fr); 
+        grid-auto-rows:auto ;
+        grid-auto-columns:200px;
+}
+
+.Contact-Address-Phone {
+        text-align: center;
+        color: rgba(255, 255, 255, 90%);
+}
+
+#hours {
+        float:right;
+          padding-right:250px;
+} 
+
+.Contact-Hours{
+        display:inline;
+        margin:50px;
+        font-weight:800;
+}
+.Contact-Address {
+        border: 4px centered black;
+        margin-bottom: 25px;   
+}
+
+.Contact-localisation {
+        /* Set a fixed width for the container */
+        width: 600px;
+        /* Center the container horizontally */
+        margin: 0 auto;
+
+}
+
+
+.Contact-localisation p {
+        
+        margin: 0;
+}
+@media (max-width: 768px) {
+        .Contact-localisation p {
+                max-width: 100%;      
+        }
+}
+
+
+/**********************************SOCIAL MEDIA / NEWSLETTER**************************************/
+footer {
+        background-color: #e23535; 
+        text-align:center;
+}
+.Social-media {
+        list-style-type: none;
+        padding:0;
+}
+.Social-media li{
+        display:inline-block;
+        padding:15px;
+
+}
+.Social-media a {
+        text-decoration: none;
+        font-weight:900;
+        color:white;
+}
+
+
+/*Screen larger than 768px  (if the screen is less than or equal to 768px*/
+@media  (max-width:768px){
+        
+        .main-bar {
+                display:none;
+        }
+      .Contact {
+        display: block;
+        padding: 40px;
+        
+      }
+      .Contact-Address-Phone {
+        text-align: center;
+      }
+      .Contact-Hours,
+      .Contact-Address,
+      .Contact-Phone {
+        float: none;
+        text-align: center;
+        margin: 15px 0;
+      }
+
+      #hours {
+        float: none;
+        padding-right: 0;
+      }
+      main  {
+        max-width: 100%;
+        overflow: hidden;
+      }
+}
+/*Screen less than 768px (if the screen is larger than or equal to 768px) */
+@media (min-width:768px){
+        .Contact {
+                display:grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: auto;
+                gap: 20px;
+                padding:100px;
+                
+        }
+        .Contact-Address-Phone {
+                text-align: left;
+        }
+        .Contact-Hours,
+        .Contact-Phone,
+        .Contact-Address{
+                float:none;
+                text-align:left;
+                margin:0;
+        }
+        
+        
+        #hours {
+                float:none;
+                padding-right: 0;
+        }
+        main {
+                max-width: fit-content;
+                height:auto;
+                overflow:hidden;
+        }
+               
+}
+
+
+
+
+/*Add Style for the hamburger */
+
+.hamburger {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 99;
+        display: block;
+        width: 35px;
+
+        cursor: pointer;
+        appearance: none;
+        background: none;
+        outline: none;
+        border: none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0px;
+        transition: 0.4s;
+
+}
+
+.hamburger.is-active:before {
+        transform: rotate(-45deg) translate(-8px, 6px);
+
+}
+
+.hamburger.is-active:after {
+        transform: rotate(45deg) translate(-9px, -8px);
+
+}
+
+.hamburger.is-active .bar {
+        opacity: 0;
+}
+
+.mobile-nav {
+        display: block;
+        top: 0;
+        left: 100%;
+        height: 40vh;
+        width: 100%;
+        z-index: 98;
+        background-color:#e23535;
+        padding-top: 10px;
+        transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+
+        display: block;
+}
+
+.mobile-nav a {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 16px;
+        text-align: center;
+        padding: 12px 16px;
+        background-color: white;
+        color:#e23535;
+        text-decoration: none;
+}
+
+.mobile-nav a:hover {
+        background-color: brown;
+}
+/*Screen larger than 769px (if screen less than or equal to 769px */
+@media  (min-width: 769px) {
+        .mobile-nav.hidden {
+                display: none;
+
+        }
+
+        .hamburger {
+                display: none;
+        }     
+}
+
+/* Add a hidden class for the main nav on smaller screens ( less than 600px) */
+@media  (max-width: 767px) {
+        .main-nav {
+                display: none;
+        }
+}
+
+/* Hide the mobile nav by default */
+.mobile-nav {
+        display: none;
+}
+
+/* Show the mobile nav when the is-active class is added */
+.mobile-nav.is-active {
+        display: block;
+        background-color: #e23535;     
+}
+
+/*Styles for the menu section */
+.menu {
+        max-width:100%;
+}
+.menu-Container {
+      
+        display:grid;
+
+        /*grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+        grid-template-rows: auto;
+        gap: 5vw;
+        padding:10px 10px 20px 10px; 
+        
+      
+        background-color:#800020 ; /* Burgundy color */    
+}
+.menu-Container-wrap >div {
+        align-items:center;
+}
+.blocks{
+        margin:20px;
+       border: 1px solid black;
+       border-radius:15px;
+      background-color: white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 900;
+      
+       
+       
+}
+.blocks >a {
+        text-decoration:none;
+        color:#e23535;
+        
+}
+.blocks a:hover {
+        color: black;
+}
+
+/*Styles for menus pages :1,2,4,5,6,7,8,9,10,11  */
+
+.menu-Container1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 3vw;
+        line-height: 30px;
+        padding: 20px 20px;
+         
+        
+        
+}
+.blocks1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+        color: #e23535;
+        text-decoration: underline;
+}
+.blocks-food,
+.blocks-price {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 600;
+        font-size: 1.5vh;
+}
+
+/*Styles for the menu1-Cold Dishes section */
+
+
+.menu-Container-wrap1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, auto);
+        gap: 5px;
+       /* overflow:hidden; */
+} 
+
+/*Style of the margin of some blocks of menu1-Cold Dishes for smaller screen
+when the screen is less than or equal to 768px */
+
+@media (max-width:768px) {
+     
+        .Mprice1 {
+                margin-top: 100px;
+        }
+}
+
+/*Styles for the menu2-Special Dishes & Szechuan Style Dishes */
+
+.menu-Container-wrap2 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(16,auto);
+        gap:5px;
+        
+}
+
+/*Styles for the menu3-Hot & Spicy Dried Pot */
+
+.menu-Container-wrap3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,auto);
+        gap:5px;
+       
+}
+
+/*Styles for the menu4-Northeast Style Dishes& Cantonese Dishes */
+
+.menu-Container-wrap4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,auto);
+        gap:5px;
+        
+}
+/*Style of the margin of some blocks of menu4- Northeast Style Dishes& Cantonese Dishes for smaller screen
+when the screen is less than or equal to 768px */
+@media (max-width:768px) {
+        .Mprice4 {
+                margin-top: 100px;
+
+        }
+}
+
+/*Styles for menu5-Hot Clay Pot &Sizzling Hot Plate Dishes */
+
+.menu-Container-wrap5 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7,auto);
+        gap:5vw;
+       
+}
+/*Style of the margin of some blocks of menu5-Hot Clay Pot &Sizzling Hot Plate Dishes for smaller screen
+when the screen is less than or equal to 768px */
+@media (max-width:768px) {
+        .Mprice5 {
+                margin-top: 110px;
+        }
+}
+/*Styles for menu6-Vegetable Dishes */
+.menu-Container-wrap6 {
+        display:grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: repeat(10,auto);
+        gap:5vw;
+       
+}
+/*Style of the margin of the 4th row of menu6- Vegetable Dishes for smaller screen
+when the screen is less than or equal to 768px */
+@media (max-width:768px) {
+        .Mprice6 {
+               margin-top:80px;
+                
+        }
+                .Mprice-wrap6 {
+                        margin-top: 280px;
+                }
+       
+}
+/*All styles concerning menu7-Soft Noodles & Vermicelli & Rice Dishes */
+
+/*Styles for menu7-Soft Noodles & Vermicelli & Rice Dishes */
+
+.menu-Container-wrap7 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,auto);
+        gap:5vw;
+        
+        
+}
+.Mprice2 {
+        margin-top: 20px;
+}
+/*Style of the margin of the 4th row of menu 7-Soft Noodles & Vermicelli & Rice Dishes for smaller screen
+when the screen is less than or equal to 768px */
+@media (max-width:768px) {
+        .Mprice {
+                        margin-top: 160px;
+                }
+        .Mprice2{
+                margin-top:230px;
+        }
+                
+}
+
+/*Styles for menu8-Rice Dishes */
+
+.menu-Container-wrap8 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);
+        grid:5vw;
+        
+}
+
+/*Styles for menu9-Soup  */
+
+.menu-Container-wrap9 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);
+        gap:5vw;
+        
+}
+/*Styles for menu10-Pancake & Desserts  */
+
+.menu-Container-wrap10 {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto);
+        gap:5vw;
+       
+}
+.Menu10-3-rows {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,auto);
+        gap:5vw;
+}
+
+/*Style of the margin of  of menu 10-Pancake & Desserts for smaller screen
+when the screen is less than or equal to 768px */
+@media (max-width:768px) {
+        .Menu10-rows21 {
+                        margin-top: 50px;
+                }
+
+        .Menu10-rows22 {
+                margin-top:178px;
+        }  
+}
+/*Styles for menu11-Wine & Drinks */
+/* Common styles for paragraphs (block-food) */
+/* Your existing styles for block-price, block-food, menu-Container1, and blocks1 */
+.menu-Container1 p {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        text-decoration: underline;
+        text-align: center;
+       /* margin-bottom: 4vw; */
+        font-weight: 900;
+        font-size: 2vw;
+        background-color: #CCCCCC;
+        padding: 10px
+}
+
+.menu-Container-wrap11 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 3vw;
+        /* Adjust the gap for smaller screens */
+}
+
+.Mprice11 {
+        margin-top: 26vw;
+}
+
+@media (min-width: 769px) {
+
+        /* Adjustments for larger screens */
+        .menu-Container-wrap11 {
+                gap: 3vw;
+                /* Increase the gap for larger screens */
+        }
+
+        .Mprice11 {
+                margin-top: 100px;
+                /* Keep the margin-top the same for larger screens */
+        }
+}
+
+.Menu11 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 3vw;
+        font-size: 1vh;
+        font-weight: 900;
+}
+
+.Menu11-Mprice11 {
+        margin-top: 100px;
+}
+
+@media (min-width: 769px) {
+
+        /* Adjustments for larger screens */
+        .Menu11-Mprice11 {
+                margin-top: 160px;
+                /* Keep the margin-top the same for larger screens */
+        }
+                
+}
+
+.Menu11-Beers {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, auto);
+        gap: 1vw;
+}
+
+.Menu11-Beers-Mprice11 {
+        margin-top: 70px;
+}
+@media (min-width: 769px) {
+        .Menu-Beers-Mprice11 {
+                margin-top:15vw;
+        }
+}
+
+.Menu11-Soft-drink {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(21, auto);
+        gap: 1vw;
+}
+
+.Menu11-Soft-drink-Mprice11 {
+        margin-top: 50px;
+}
+
+@media (min-width: 769px) {
+
+        /* Adjustments for larger screens */
+        .Menu11-Soft-drink-Mprice11 {
+                margin-top: 50px;
+                /* Keep the margin-top the same for larger screens */
+        }
+}
+
+
+
+
+
+
+/*All Styles regarding  Booking page */
+
+#myBooking {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        background-color: #e23535;
+        letter-spacing: 1px;
+        max-width: 100%;
+}
+
+/*All Styles regarding  Reminder-OpenHours */
+
+.Booking-page {
+        background-color: #fafafa;
+        margin: 100px;
+        box-shadow: rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: auto;
+        max-width: fit-content;
+}
+
+.Reminder-OpenHours {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 50px;
+        outline: 3px dashed #e23535;
+        outline-offset: -30px;
+        text-align: center;
+}
+
+.heading {
+        font-size: 35px;
+
+}
+
+.heading-days {
+        background-color: #e23535;
+        font-size: 30px;
+}
+
+.heading-phone,
+.heading-Address,
+.heading-email {
+        font-size: 20px;
+}
+
+.Booking-Container {
+        padding: 20px;
+        margin: 20px 30px 20px 30px;
+}
+
+.heading-Booking-Container {
+        text-transform: uppercase;
+        padding: 20px;
+        background-color: #e23535;
+        text-align: center;
+
+}
+
+form {
+        display: grid;
+        grid-row-gap: 30px;
+}
+
+.form-field {
+        display: flex;
+        justify-content: space-around;
+}
+
+input,
+select {
+        padding: 10px 15px;
+}
+
+.button-style {
+        background-color: rgba(0, 0, 0, 0.95);
+        color: white;
+        padding: 10px 0;
+        border-radius: 100px;
+        box-shadow: 7px 10px 12px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all(0.3s);
+}
+
+.button-style:hover {
+        transform: scale(1.03);
+        box-shadow: 10px 12px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
